@@ -34,6 +34,16 @@ class ViewController: UIViewController {
     @IBAction func doAnswer(_ sender: UIButton) {
         
         if currentIndex >= maxLength-1 {
+            
+            let alert = UIAlertController(title: "了不起！", message: "你已经完成了所有的题目，是否想重新开始？", preferredStyle: .alert)
+            
+            let restartAction = UIAlertAction(title: "重新开始", style: .default, handler: {
+                (action) in self.startOver()
+            })
+            
+            alert.addAction(restartAction)
+            present(alert, animated: false, completion: nil)
+            
             return
         }
         
@@ -55,6 +65,12 @@ class ViewController: UIViewController {
         currentIndex += 1
         showQuestion()
         
+    }
+    
+    func startOver(){
+        currentIndex = 0
+        scores = 0
+        showQuestion()
     }
     
 }
