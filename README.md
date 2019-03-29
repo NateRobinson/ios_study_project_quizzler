@@ -17,3 +17,8 @@ alert.addAction(restartAction)
 present(alert, animated: false, completion: nil)
 ```
 
+3. 如何在 Swift 中使用 Object-C 代码：
+    1. 复制  Objective-C 到目录中，勾选 `copy items if needed` 和 `add to targes:xxx`
+    2. Xcode 会提示让 `Create Bridging Header`，点击确定
+    3. 在 xxx-Bridging-Header.h 文件中添加 `#import "ProgressHUD.h"` ,不然 Xcode 无法识别该 Objective-C 文件
+    

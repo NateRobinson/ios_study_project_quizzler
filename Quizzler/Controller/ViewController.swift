@@ -59,6 +59,9 @@ class ViewController: UIViewController {
         
         if tempResult == question.answer {
             scores += 5
+            ProgressHUD.showSuccess("正确")
+        } else {
+            ProgressHUD.showError("错误")
         }
         
         
